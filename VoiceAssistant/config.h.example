@@ -1,0 +1,118 @@
+#pragma once
+
+// Copy this file to config.h before compiling.
+// These values are defaults. Serial commands such as `connect`, `asrkey`,
+// `llmkey`, `model/models`, `llmbase`, and `llmurl` save overrides in ESP32 NVS.
+
+// Wi-Fi
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
+
+// Volcengine / Doubao ASR big-model streaming API.
+// Docs: https://www.volcengine.com/docs/6561/1354869?lang=zh
+#define VOLC_ASR_HOST "openspeech.bytedance.com"
+#define VOLC_ASR_PATH "/api/v3/sauc/bigmodel"
+#define VOLC_ASR_API_KEY ""
+// Legacy credentials are still supported when VOLC_ASR_API_KEY is empty.
+#define VOLC_ASR_APP_KEY ""
+#define VOLC_ASR_ACCESS_KEY ""
+#define VOLC_ASR_RESOURCE_ID "volc.bigasr.sauc.duration"
+
+// Audio request defaults.
+#define VOLC_ASR_UID "esp32s3-r16n8"
+#define VOLC_ASR_MODEL_NAME "bigmodel"
+#define VOLC_ASR_LANGUAGE "zh-CN"
+
+// Preferred ASR: iFlytek RTASR WebSocket API. Leave empty and configure at runtime with:
+//   asrprovider xfyun
+//   xfyunasr <appid> <apikey>
+// The ASR menu shows READY only after both values are present.
+// Docs: https://www.xfyun.cn/doc/asr/rtasr/API.html
+#define XFYUN_ASR_HOST "rtasr.xfyun.cn"
+#define XFYUN_ASR_PATH "/v1/ws"
+#define XFYUN_ASR_APP_ID ""
+#define XFYUN_ASR_API_KEY ""
+#define XFYUN_ASR_LANGUAGE "cn"
+
+// Optional independent iFlytek IAT V2.0 provider (keeps RTASR above).
+// Runtime only: xfyun2asr <appid> <apikey> <apisecret>; asrprovider xfyun2
+// Uses separate xfyun2_* NVS keys; never put actual keys in source.
+// Docs: https://www.xfyun.cn/doc/spark/spark_zh_iat_new.html
+
+
+// OpenAI-compatible chat endpoint.
+// DeepSeek runtime setup: provideradd deepseek https://api.deepseek.com <api_key>
+// This automatically offers deepseek-v4-flash and deepseek-v4-pro.
+// Volcengine Ark:
+// https://ark.cn-beijing.volces.com/api/v3/chat/completions
+// DeepSeek:
+// https://api.deepseek.com/chat/completions
+#define LLM_API_URL ""
+#define LLM_API_KEY ""
+#define LLM_MODEL_ID ""
+#define LLM_SYSTEM_PROMPT "You are a concise helpful assistant. Reply in Chinese unless the user asks otherwise."
+
+// GMT130-v1.0 / ST7789 240x240 SPI display.
+// The sketch uses LovyanGFX built-in fonts::efontCN_16 for Chinese UI text.
+#define TFT_MOSI 11
+#define TFT_SCLK 12
+#define TFT_RST 8
+#define TFT_DC 7
+#define TFT_BL 9
+#define TFT_CS -1
+#define TFT_SPI_HOST SPI2_HOST
+#define TFT_INVERT_COLOR true
+#define TFT_RGB_ORDER false
+#define TFT_OFFSET_X 0
+#define TFT_OFFSET_Y 0
+#define TFT_ROTATION 0  // 0 = normal, 2 = 180 degrees
+
+// INMP441 I2S microphone. Wire L/R to GND for left channel.
+#define MIC_I2S_PORT I2S_NUM_0
+#define MIC_I2S_BCLK 4
+#define MIC_I2S_WS 5
+#define MIC_I2S_DIN 6
+#define MIC_SAMPLE_RATE 16000
+#define MIC_SAMPLE_BITS 16
+#define MIC_SAMPLE_SHIFT 16
+
+// Environment sensor shown on Page1. Default firmware uses DHT22.
+#define DHT_PIN 16
+#define DHT11_PIN DHT_PIN
+
+// New PCB sensor variant: AHT20 + BMP280 over I2C.
+// Enable this before flashing the I2C-AHT20 firmware build.
+#define SENSOR_I2C_AHT20_BMP280 true
+// #define AHT20_BMP280_SDA 18
+// #define AHT20_BMP280_SCL 17
+// #define AHT20_I2C_ADDR 0x38
+// #define BMP280_I2C_ADDR 0x76
+// #define BMP280_I2C_ADDR_ALT 0x77
+
+// Buttons: one side to GPIO, the other side to GND. Internal pull-up is enabled.
+// Button A = GPIO13, Button B = GPIO14, Button C = GPIO15.
+// Page1: tap A opens settings; hold A starts/stops a voice question; B/C scroll chat.
+// Page2: A selects/applies or hold A returns; B/C move or change menu values.
+// After screen sleep, B/C wake and keep the same scroll/menu action; hold A wakes and starts voice.
+// If ASR is not configured, hold A from the error screen opens the VOICE/ASR setting.
+// Wi-Fi and Model menu items switch among profiles saved by serial commands.
+#define BUTTON_START_PIN 13
+#define BUTTON_NEXT_PIN 14
+#define BUTTON_PREV_PIN 15
+#define BUTTON_ACTIVE_LOW true
+#define BUTTON_LONG_PRESS_MS 800
+#define BUTTON_FAST_REPEAT_MS 160
+
+// Runtime behavior.
+#define AUDIO_CHUNK_MS 200
+#define MAX_RECORD_SECONDS 12
+#define ASR_CONNECT_TIMEOUT_MS 8000
+#define ASR_FINAL_TIMEOUT_MS 12000
+#define LLM_TIMEOUT_MS 30000
+
+// Screen UI notes:
+// Page1 shows NTP time, environment sensor data, Wi-Fi status, ASR user
+// input, LLM output, and MIC status. Page2 menu controls brightness 1-100,
+// sleep timeout 0-30 minutes (0 disables sleep), and clear-chat-history/save.
+// Use serial `configexport` on a configured board, then paste the VA-CFG block
+// into a target board to migrate Wi-Fi/API/model/prompt settings.

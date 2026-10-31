@@ -1,0 +1,15 @@
+{
+  "hardware_tested": false,
+  "flashed": false,
+  "native_sse_stress_pass": true,
+  "reasoning_bytes": 1536000,
+  "inline_think_bytes": 1024000,
+  "visible_limit_bytes": 49152,
+  "live_layout_max_bytes": 771,
+  "asr_capture_and_upload_bounds_pass": true,
+  "latex_samples_pass": true,
+  "original_sensor_drivers_unchanged": true,
+  "no_camera_dependencies": true,
+  "original_session_count": 5,
+  "menu_group_count": 5
+}

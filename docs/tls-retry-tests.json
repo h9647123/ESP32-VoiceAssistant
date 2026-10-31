@@ -1,0 +1,10 @@
+{
+  "actual_retry_function_passed": true,
+  "stop_clears_trust_simulated": true,
+  "trust_reattached_before_each_retry": true,
+  "second_retry_after_first_tls_failure_tested": true,
+  "normal_success_no_extra_dns": true,
+  "plain_local_cancel_and_disabled_guards_passed": true,
+  "hardware_tested": false,
+  "flashed": false
+}

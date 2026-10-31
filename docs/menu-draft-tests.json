@@ -1,0 +1,8 @@
+{
+  "five_root_groups_pass": true,
+  "all_twenty_items_selectable": true,
+  "sensor_setting_retained_in_ui": true,
+  "thinking_visibility_pass": true,
+  "asr_segment_commit_no_duplicate_pass": true,
+  "hardware_tested": false
+}

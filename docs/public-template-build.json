@@ -1,0 +1,12 @@
+{
+  "version": "v1.1.43-i2c-aht20",
+  "build_passed": true,
+  "configuration": "empty credentials from config.h.example; AHT20/BMP280 enabled",
+  "fqbn": "esp32:esp32:esp32s3:PartitionScheme=huge_app,PSRAM=opi,FlashSize=16M,USBMode=hwcdc,CDCOnBoot=default",
+  "arduino_esp32": "3.3.8",
+  "program_bytes": 2282843,
+  "max_program_bytes": 3145728,
+  "static_ram_bytes": 61504,
+  "flashed": false,
+  "public_template_build_source_matches": true
+}

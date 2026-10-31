@@ -1,0 +1,11 @@
+{
+  "tests": {
+    "reasoning": "PASS",
+    "tls_retry": "PASS",
+    "menu_draft": "PASS"
+  },
+  "uses_current_firmware_source": true,
+  "hardware_tested": false,
+  "network_used": false,
+  "flashed": false
+}

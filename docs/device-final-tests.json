@@ -1,0 +1,23 @@
+{
+  "root_five_groups": true,
+  "root_enters_submenu": true,
+  "submenu_returns_root": true,
+  "root_returns_home": true,
+  "listing_preserves_root": true,
+  "sensor_control_retained": true,
+  "sleep_limit_30_minutes": true,
+  "asr_value_edit": true,
+  "chinese_width_audit": true,
+  "english_width_audit": true,
+  "clock_sensor_page": true,
+  "round_chord_stays_home": true,
+  "offline_check_immediate": true,
+  "offline_check_seconds": 0.562,
+  "final_sensors_ok": true,
+  "final_session_2": true,
+  "final_sleep_2min": true,
+  "final_language_chinese": true,
+  "final_custom_iat": true,
+  "no_device_panic": true,
+  "menu_row_rendering_identical_to_cam": true
+}
