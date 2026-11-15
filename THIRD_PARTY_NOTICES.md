@@ -1,6 +1,6 @@
 # Third-party notices
 
-`VoiceAssistant/science_glyphs.h` contains raster glyphs derived from Noto Sans, Noto Sans Math and Noto Sans Symbols 2. The source fonts are distributed under the SIL Open Font License 1.1. Their copyright and license texts are preserved in `licenses/*-OFL.txt`. Those license terms apply to the corresponding font-derived assets.
+`VoiceAssistant/science_glyphs.h`, `common_science_glyphs.h`, `science_script11.h`, `science_script12.h`, `readable_glyphs.h` and `traditional_glyphs.h` contain raster glyphs derived from Noto Sans, Noto Sans SC (including Bold), Noto Sans Math and Noto Sans Symbols 2. The source fonts are distributed under the SIL Open Font License 1.1. Their copyright and license texts are preserved in `licenses/*-OFL.txt` and `licenses/notosanssc-subset.txt`. Those license terms apply to the corresponding font-derived assets.
 
 The build uses Arduino ESP32 / ESP-IDF, ArduinoJson, LovyanGFX, WebSockets and zlib_turbo as separately installed dependencies. This repository does not redistribute their SDK/library packages; consult the license included in each dependency. Their names are used to identify build requirements.
 

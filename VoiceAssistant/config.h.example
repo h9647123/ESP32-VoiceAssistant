@@ -65,7 +65,7 @@
 #define TFT_RGB_ORDER false
 #define TFT_OFFSET_X 0
 #define TFT_OFFSET_Y 0
-#define TFT_ROTATION 0  // 0 = normal, 2 = 180 degrees
+#define TFT_ROTATION 0  // Reference AHT20 board; use 2 for a 180-degree rotated mount
 
 // INMP441 I2S microphone. Wire L/R to GND for left channel.
 #define MIC_I2S_PORT I2S_NUM_0

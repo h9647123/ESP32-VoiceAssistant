@@ -69,7 +69,7 @@ details.sec>.body{padding:0 12px 12px}
 <div class="panel" id="p-cfg">
   <details class="sec" open><summary>Wi-Fi 网络</summary><div class="body">
     <label>当前</label><div class="slot" id="wifinow">-</div>
-    <label>SSID</label><input id="w_ssid" type="text" placeholder="例如 2-2-303">
+    <label>SSID</label><input id="w_ssid" type="text" placeholder="example-network">
     <label>密码（留空则用已绑定的预设槽）</label><input id="w_pw" type="text">
     <button onclick="joinWifi()">连接</button>
     <div id="wres"></div>
