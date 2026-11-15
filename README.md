@@ -1,5 +1,7 @@
 # ESP32 VoiceAssistant · 原版
 
+**中文** | [English](README.en.md)
+
 基于 ESP32-S3 的中文语音助手：按键录音、语音识别、大模型流式问答、联网搜索、理科符号显示，以及 AHT20/BMP280 温湿度与气压显示。使用 ST7789 240×240 屏和手写 UI，无需 LVGL。
 
 当前公开版本：**v1.1.45-i2c-aht20 · 2026-11-15**。本仓库保留原版 AHT20/BMP280 与五个 Flash 会话；摄像头、相册、带图问答及录像请见独立的 [ESP32-CAM-VoiceAssistant](https://github.com/h9647123/ESP32-CAM-VoiceAssistant)。两版引脚、固件和配置分别维护。
